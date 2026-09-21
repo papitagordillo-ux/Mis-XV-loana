@@ -30,6 +30,13 @@ h2{font-size:clamp(31px,8vw,50px);margin:8px 0 18px;font-weight:500}
 .arrow{position:absolute;bottom:15px;font-family:Arial,sans-serif;font-size:12px;opacity:.8}
 footer{padding:20px;text-align:center;font:12px Arial,sans-serif;color:#587086}
 @media(max-width:480px){.info{grid-template-columns:1fr}.card{padding:27px 18px}.quote{font-size:18px}}
+
+.rsvp{background-image:linear-gradient(rgba(8,10,18,.16),rgba(8,10,18,.28)),url("fondo-rsvp-loana.png");background-size:cover;background-position:center;min-height:100vh;}
+.rsvp .card{background:rgba(10,12,22,.12);border:0;box-shadow:none;backdrop-filter:none;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.55);}
+.rsvp .pill{background:rgba(255,255,255,.18);color:#fff;border-color:rgba(255,255,255,.45)}
+.rsvp .btn{background:rgba(15,15,25,.55);color:#fff;border-color:rgba(255,255,255,.7);text-shadow:none;backdrop-filter:blur(5px)}
+.star{position:absolute;top:-30px;left:var(--x);font-size:var(--s);opacity:0;animation:fall var(--d) linear infinite;animation-delay:var(--delay);z-index:2;pointer-events:none;filter:drop-shadow(0 0 5px rgba(255,255,255,.8))}
+@keyframes fall{0%{transform:translate3d(0,-30px,0) rotate(0deg);opacity:0}10%{opacity:.9}90%{opacity:.75}100%{transform:translate3d(var(--drift),110vh,0) rotate(180deg);opacity:0}}
 </style>
 </head>
 <body>
@@ -68,16 +75,7 @@ footer{padding:20px;text-align:center;font:12px Arial,sans-serif;color:#587086}
  </div>
 </section>
 
-<section>
- <div class="card">
-  <div class="pill">MÚSICA</div>
-  <h2>Un poquito de mi canción ♫</h2>
-  <p class="small">Tocá el botón para reproducir la música. El archivo de audio debe agregarse como <b>musica.mp3</b> dentro de esta carpeta para que funcione.</p>
-  <button class="btn primary" id="play">▶️ Reproducir música</button>
-  <audio id="audio" loop preload="none"><source src="musica.mp3" type="audio/mpeg"></audio>
-  <p class="small">Canción elegida: “Reflections” — The Neighbourhood</p>
- </div>
-</section>
+
 
 <section>
  <div class="card">
@@ -92,14 +90,14 @@ footer{padding:20px;text-align:center;font:12px Arial,sans-serif;color:#587086}
  </div>
 </section>
 
-<section>
+<section class="rsvp">
+ <span class="star" style="--x:7%;--s:18px;--d:8s;--delay:0s;--drift:-25px">✦</span><span class="star" style="--x:18%;--s:12px;--d:10s;--delay:2s;--drift:20px">✦</span><span class="star" style="--x:31%;--s:16px;--d:9s;--delay:1s;--drift:-18px">✦</span><span class="star" style="--x:44%;--s:10px;--d:7s;--delay:3s;--drift:24px">✦</span><span class="star" style="--x:56%;--s:17px;--d:11s;--delay:0s;--drift:18px">✦</span><span class="star" style="--x:68%;--s:11px;--d:8s;--delay:4s;--drift:-20px">✦</span><span class="star" style="--x:79%;--s:15px;--d:10s;--delay:2s;--drift:28px">✦</span><span class="star" style="--x:91%;--s:12px;--d:9s;--delay:5s;--drift:-18px">✦</span><span class="star" style="--x:13%;--s:9px;--d:6s;--delay:1s;--drift:15px">✦</span><span class="star" style="--x:37%;--s:8px;--d:12s;--delay:6s;--drift:-12px">✦</span><span class="star" style="--x:63%;--s:9px;--d:7s;--delay:3s;--drift:18px">✦</span><span class="star" style="--x:85%;--s:10px;--d:11s;--delay:7s;--drift:-22px">✦</span>
  <div class="card">
   <div class="pill">CONFIRMACIÓN</div>
   <h2>¿Vas a acompañarme?</h2>
   <p class="script">Podés confirmar tu asistencia desde acá o avisarme por WhatsApp 💌</p>
   <a class="btn primary" href="https://forms.google.com/" target="_blank">✅ Confirmar asistencia</a>
   <a class="btn" href="https://wa.me/?text=Hola%20Loana!%20Quiero%20confirmar%20mi%20asistencia%20a%20tus%20XV%20%F0%9F%92%99" target="_blank">💬 Confirmar por WhatsApp</a>
-  <p class="small">El botón de formulario queda listo para reemplazar con tu formulario real.</p>
  </div>
 </section>
 
